@@ -1,0 +1,8 @@
+* libtcod
+
+This is an adapted version of [[http://roguecentral.org/doryen/libtcod/][libtcod-1.5.1]]. Adaptions are:
+
+  * cmake support (with export for easy use within other cmake projects
+  * monolithic build (a single .so file will be generated)
+
+For instructions and motivation, please see my ascii-paint repository.

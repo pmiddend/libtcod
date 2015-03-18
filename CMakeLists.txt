@@ -92,3 +92,6 @@ target_link_libraries(tcod ${ZLIB_LIBRARIES})
 target_link_libraries(tcod dl)
 
 set_target_properties (tcod PROPERTIES LINK_FLAGS "-Wl,--no-undefined")
+
+install(TARGETS tcod DESTINATION lib/ EXPORT tcod-config)
+export(EXPORT tcod-config)
