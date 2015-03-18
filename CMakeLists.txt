@@ -71,24 +71,24 @@ set(tcod_files
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/gui)
 
-add_library(libtcod SHARED ${tcod_files})
+add_library(tcod SHARED ${tcod_files})
 
 find_package(SDL REQUIRED)
-target_include_directories(libtcod PRIVATE ${SDL_INCLUDE_DIR})
-target_link_libraries(libtcod ${SDL_LIBRARY})
+target_include_directories(tcod PRIVATE ${SDL_INCLUDE_DIR})
+target_link_libraries(tcod ${SDL_LIBRARY})
 
 find_package(SDL_image REQUIRED)
-target_include_directories(libtcod PRIVATE ${SDL_IMAGE_INCLUDE_DIRS})
-target_link_libraries(libtcod ${SDL_IMAGE_LIBRARIES})
+target_include_directories(tcod PRIVATE ${SDL_IMAGE_INCLUDE_DIRS})
+target_link_libraries(tcod ${SDL_IMAGE_LIBRARIES})
 
 find_package(OpenGL REQUIRED)
-target_include_directories(libtcod PRIVATE ${OPENGL_INCLUDE_DIR})
-target_link_libraries(libtcod ${OPENGL_LIBRARIES})
+target_include_directories(tcod PRIVATE ${OPENGL_INCLUDE_DIR})
+target_link_libraries(tcod ${OPENGL_LIBRARIES})
 
 find_package(ZLIB REQUIRED)
-target_include_directories(libtcod PRIVATE ${ZLIB_INCLUDE_DIRS})
-target_link_libraries(libtcod ${ZLIB_LIBRARIES})
+target_include_directories(tcod PRIVATE ${ZLIB_INCLUDE_DIRS})
+target_link_libraries(tcod ${ZLIB_LIBRARIES})
 
-target_link_libraries(libtcod dl)
+target_link_libraries(tcod dl)
 
-set_target_properties (libtcod PROPERTIES LINK_FLAGS "-Wl,--no-undefined")
+set_target_properties (tcod PROPERTIES LINK_FLAGS "-Wl,--no-undefined")
